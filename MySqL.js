@@ -62,7 +62,7 @@ function updateProduct(x) {
     console.log("Update\n");
     var query = connection.query(
         "UPDATE products SET stock_quantity = stock_quantity - ?  WHERE item_id = ?", [
-            x, { item_id: pickID }
+            x, pickID
         ],
         function(err, res) {
             if (err) throw err;
@@ -73,7 +73,7 @@ function updateProduct(x) {
     );
 
     // // logs the actual query being run
-    // console.log(query.sql);
+    console.log(query.sql);
 }
 
 
